@@ -1,4 +1,4 @@
-# AdminDACS Hướng dẫn cài đặt
+# Admin_DACS Hướng dẫn cài đặt
 
 ## Lưu ý: Chạy trang Admin bằng "http://localhost:3000"
 
@@ -15,7 +15,7 @@
 ## Bước 1. Clone repository về máy tính:
 
 ```bash
-git clone https://github.com/Quangqueee/AdminDACS.git
+git clone https://github.com/Quangqueee/Admin_DACS.git
 cd AdminDACS
 ```
 ## Bước 2 Cài đặt các Package
