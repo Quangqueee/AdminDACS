@@ -1,5 +1,7 @@
 # AdminDACS Hướng dẫn cài đặt
 
+## Lưu ý: Chạy trang Admin bằng "http://localhost:3000"
+
 ## Bắt Đầu
 
 ## Yêu Cầu
