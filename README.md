@@ -2,11 +2,10 @@
 
 ## Lưu ý: Chạy trang Admin bằng "http://localhost:3000"
 
-## Bắt Đầu
 
 ## Yêu Cầu
 
-Đảm bảo rằng bạn đã cài đặt các phần mềm sau trên máy tính của mình:
+Đảm bảo cài đặt các phần mềm sau trên máy tính của mình:
 - Node.js
 - npm (Trình quản lý gói Node)
 
@@ -16,7 +15,6 @@
 
 ```bash
 git clone https://github.com/Quangqueee/Admin_DACS.git
-cd AdminDACS
 ```
 ## Bước 2 Cài đặt các Package
 ```bash
@@ -38,18 +36,22 @@ NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=dbbuff0rl
 
 MONGODB_URL=mongodb+srv://Borcelle_Admin:quangque@cluster0.jcfzjjz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
-# Stripe keys
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_51Pc6LYGEx2DXOitBwWZ6SVv93LJlchVCF69fbAKVpaTf7G5G4laXVUMChG0VUMCWolnDGKUwThG6vJRYHEA24FCC00kJwNqSYh
 NEXT_PUBLIC_STRIPE_SECRET_KEY=sk_test_51Pc6LYGEx2DXOitBGj5BiWPxrn95H6ovacuirD5FLWj9bC1kVt4ias0hhT2dhXSQUuG39gLNpWkkThXLJCengyj600n4siouUa
-
-
 
 ECOMMERCE_STORE_URL=http://localhost:3001
 
 STRIPE_WEBHOOK_SECRET= whsec_230cfb902e92ce61b762c7d7ade151949fcf8f49d3a3538af3a485020b3aadcf
 ```
 
-## Bước 4. Chạy code bằng lệnh
+## Bước 4. Chạy website bằng lệnh
 ```bash
 npm run dev
 ```
+
+## Bước 5. Cài đặt Stripe để thực hiện thanh toán
+```bash
+cd 'đến thư mục chứa file cài đặt Stripe.exe'
+stripe listen --forward-to localhost:3000/api/webhooks
+```
+
