@@ -1,7 +1,8 @@
 # Admin_DACS Hướng dẫn cài đặt
 
 ## Lưu ý: Chạy trang Admin bằng "http://localhost:3000"
-
+Tk admin: quangque4
+Mk admin: quangque1
 
 ## Yêu Cầu
 
