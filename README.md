@@ -53,6 +53,7 @@ npm run dev
 ## Bước 5. Cài đặt Stripe để thực hiện thanh toán
 ```bash
 cd 'đến thư mục chứa file cài đặt Stripe.exe'
+stripe login
 stripe listen --forward-to localhost:3000/api/webhooks
 ```
 
