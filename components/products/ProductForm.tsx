@@ -34,12 +34,12 @@ const formSchema = z.object({
   tags: z.array(z.string()),
   sizes: z.array(z.string()),
   colors: z.array(z.string()),
-  price: z.coerce.number().min(0.1),
-  expense: z.coerce.number().min(0.1),
+  price: z.coerce.number().min(0),
+  expense: z.coerce.number().min(0),
 });
 
 interface ProductFormProps {
-  initialData?: ProductType | null; //Must have "?" to make it optional
+  initialData?: ProductType | null; 
 }
 
 const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
@@ -84,8 +84,8 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
           tags: [],
           sizes: [],
           colors: [],
-          price: 0.1,
-          expense: 0.1,
+          price: 0,
+          expense: 0,
         },
   });
 
@@ -221,7 +221,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
                   <FormControl>
                     <Input
                       type="number"
-                      placeholder="Expense"
+                      placeholder=""
                       {...field}
                       onKeyDown={handleKeyPress}
                     />
@@ -238,7 +238,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
                   <FormLabel>Phân loại</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="Phân loại"
+                      placeholder="Bắt buộc"
                       {...field}
                       onKeyDown={handleKeyPress}
                     />

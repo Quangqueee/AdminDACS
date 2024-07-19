@@ -82,23 +82,24 @@ export const POST = async (
     const addedCollections = collections.filter(
       (collectionId: string) => !product.collections.includes(collectionId)
     );
-    // included in new data, but not included in the previous data
+    // được bao gồm trong dữ liệu mới, nhưng không được bao gồm trong dữ liệu trước đó
+
 
     const removedCollections = product.collections.filter(
       (collectionId: string) => !collections.includes(collectionId)
     );
-    // included in previous data, but not included in the new data
+    // có trong dữ liệu trước đó nhưng không có trong dữ liệu mới
 
-    // Update collections
+    // Cập nhật bộ sưu tập
     await Promise.all([
-      // Update added collections with this product
+      // Cập nhật các bộ sưu tập đã thêm với sản phẩm này
       ...addedCollections.map((collectionId: string) =>
         Collection.findByIdAndUpdate(collectionId, {
           $push: { products: product._id },
         })
       ),
 
-      // Update removed collections without this product
+      // Cập nhật các bộ sưu tập đã xóa mà không có sản phẩm này
       ...removedCollections.map((collectionId: string) =>
         Collection.findByIdAndUpdate(collectionId, {
           $pull: { products: product._id },
@@ -106,7 +107,7 @@ export const POST = async (
       ),
     ]);
 
-    // Update product
+    // Cập nhật sản phẩm
     const updatedProduct = await Product.findByIdAndUpdate(
       product._id,
       {

@@ -29,7 +29,7 @@ const formSchema = z.object({
 });
 
 interface CollectionFormProps {
-  initialData?: CollectionType | null; //Must have "?" to make it optional
+  initialData?: CollectionType | null; 
 }
 
 const CollectionForm: React.FC<CollectionFormProps> = ({ initialData }) => {

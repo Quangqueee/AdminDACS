@@ -13,6 +13,10 @@ export default async function Home() {
   const totalOrders = await getTotalSales().then((data) => data.totalOrders);
   const totalCustomers = await getTotalCustomers();
 
+  const formattedRevenue = totalRevenue.toLocaleString("vi-VN", {
+    minimumFractionDigits: 0,
+  });
+
   const graphData = await getSalesPerMonth();
 
   return (
@@ -27,7 +31,7 @@ export default async function Home() {
             <CircleDollarSign className="max-sm:hidden" />
           </CardHeader>
           <CardContent>
-            <p className="text-body-bold">{totalRevenue} vnđ</p>
+            <p className="text-body-bold">{formattedRevenue} đ</p>
           </CardContent>
         </Card>
 
@@ -54,7 +58,7 @@ export default async function Home() {
 
       <Card className="mt-10">
         <CardHeader>
-          <CardTitle>Doanh số (vnđ)</CardTitle>
+          <CardTitle>Doanh số (tr)</CardTitle>
         </CardHeader>
         <CardContent>
           <SalesChart data={graphData} />
